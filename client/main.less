@@ -1,0 +1,228 @@
+@import "colors.less";
+@import "variables.less";
+@import "~bootstrap/less/mixins.less";
+@import "~bootstrap/less/utilities.less";
+@import "~bootstrap/less/normalize.less";
+@import "~bootstrap/less/print.less";
+@import "~bootstrap/less/glyphicons.less";
+@import "~bootstrap/less/scaffolding.less";
+@import "~bootstrap/less/type.less";
+@import "~bootstrap/less/code.less";
+@import "~bootstrap/less/grid.less";
+@import "~bootstrap/less/tables.less";
+@import "~bootstrap/less/forms.less";
+@import "~bootstrap/less/buttons.less";
+@import "~bootstrap/less/component-animations.less";
+@import "~bootstrap/less/dropdowns.less";
+@import "~bootstrap/less/button-groups.less";
+@import "~bootstrap/less/input-groups.less";
+@import "~bootstrap/less/navs.less";
+@import "~bootstrap/less/navbar.less";
+@import "~bootstrap/less/breadcrumbs.less";
+@import "~bootstrap/less/pagination.less";
+@import "~bootstrap/less/pager.less";
+@import "~bootstrap/less/labels.less";
+@import "~bootstrap/less/badges.less";
+@import "~bootstrap/less/jumbotron.less";
+@import "~bootstrap/less/thumbnails.less";
+@import "~bootstrap/less/alerts.less";
+@import "~bootstrap/less/progress-bars.less";
+@import "~bootstrap/less/media.less";
+@import "~bootstrap/less/list-group.less";
+@import "~bootstrap/less/panels.less";
+@import "~bootstrap/less/responsive-embed.less";
+@import "~bootstrap/less/wells.less";
+@import "~bootstrap/less/close.less";
+@import "~bootstrap/less/modals.less";
+@import "~bootstrap/less/tooltip.less";
+@import "~bootstrap/less/popovers.less";
+@import "~bootstrap/less/carousel.less";
+
+@import "~highlight.js/styles/solarized-dark.css";
+
+.Pane1,
+.Pane2 { overflow-x: hidden; overflow-y: auto;
+    > ol, > ul, > pre {
+        margin: 3px;
+    }
+
+    > .container-fluid {
+         width: 100%;
+    }
+}
+
+.header > .Pane1 { overflow: hidden; }
+
+pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    word-wrap: break-word;
+
+    &.text {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.glyphicon {
+     font-size: 17px;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
+@resizer-size: 3px;
+@resizer-color: @brand-primary;
+@resizer-color-dark: @brand-primary;
+
+.Resizer {
+    background: #000;
+    z-index: 1;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+
+    &:hover {
+        -webkit-transition: all 2s ease;
+        transition: all 2s ease;
+    }
+
+    &.horizontal {
+        height: @resizer-size;
+        margin: 0;
+        border-top: @resizer-size solid @resizer-color-dark;
+        border-bottom: @resizer-size solid @resizer-color-dark;
+        cursor: row-resize;
+        width: 100%;
+
+        &:hover {
+            border-top: @resizer-size solid @resizer-color-dark;
+            border-bottom: @resizer-size solid @resizer-color-dark;
+        }
+    }
+
+    &.vertical {
+        width: @resizer-size;
+        margin: 0;
+        border-left: @resizer-size solid @resizer-color;
+        border-right: @resizer-size solid @resizer-color;
+        cursor: col-resize;
+        height: 100%;
+
+        &:hover {
+            border-left: @resizer-size solid @resizer-color-dark;
+            border-right: @resizer-size solid @resizer-color-dark;
+        }
+    }
+
+    &.disabled {
+        display: none;
+    }
+}
+
+.navbar-default {
+    background-color: @teal;
+    border-color: @teal;
+
+    .navbar-nav {
+        > li > a {
+            &:hover,
+            &:focus {
+                 background-color: @teal-400;
+            }
+        }
+    }
+}
+
+.sessions {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    border-color: @teal-100;
+
+    &.active {
+        border-color: @teal-100;
+        background-color: @teal-100;
+        color: @text-color;
+
+        .list-group-item-text {
+            color: @text-color;
+        }
+    }
+}
+
+.logs-header {
+    .navbar {
+        margin-bottom: 0;
+        margin-left: 15px;
+        margin-right: 15px;
+
+        .navbar-nav > li > a {
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+    }
+    > .row {
+        margin-left: 0;
+        margin-right: 0;
+        border-bottom: 1px solid @teal-100;
+
+        .col-md-1 {
+             text-align: center;
+        }
+    }
+}
+
+.logs-list {
+    > .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .log-item {
+        border-bottom: 1px solid @teal-100;
+        cursor: pointer;
+        padding: 10px 15px;
+
+        pre {
+            cursor: pointer;
+            margin: 0;
+            background: transparent;
+            border: none;
+        }
+
+        &.active {
+            background: @teal-100;
+        }
+
+        .col-md-1 {
+             text-align: center;
+        }
+    }
+}
+
+.logdetail {
+     width: 100%;
+
+     .nav-pills {
+         margin: 0;
+
+         .active {
+              background: @teal;
+              color: @body-bg;
+         }
+     }
+}
